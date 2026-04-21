@@ -49,3 +49,20 @@ serde = { version = "1.0", features = ["derive"] }
 snafu = "0.8.6"
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 rand = "0.8"
+
+# Patch lance crates to use SimbeRobotics fork with the merge_with_schema sliced-list fix
+# backported from upstream (lance-format/lance#6581). Drop once upstream ships a
+# v4.0.x patch release including the fix and lance-duckdb bumps to it.
+[patch.crates-io]
+lance = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-arrow = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-core = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-datafusion = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-encoding = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-file = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-index = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-io = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-linalg = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-namespace = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-namespace-impls = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
+lance-table = { git = "https://github.com/SimbeRobotics/lance.git", branch = "release/simbe-v4-patch" }
